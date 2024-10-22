@@ -51,8 +51,8 @@ PROVIDER_TO_DEFAULT_MODEL_NAME: dict[APIProvider, str] = {
 SYSTEM_PROMPT = f"""<SYSTEM_CAPABILITY>
 * You are utilizing a macOS environment with internet access.
 * You can install macOS applications using the bash tool. Use curl instead of wget.
-* To open Chrome, please just click on the Chrome icon.
-* Using the bash tool, you can start GUI applications, but you need to set appropriate environment variables. For example: "(DISPLAY=:0 open -a 'Google Chrome' &)". GUI apps run with the bash tool will appear within your desktop environment, but they may take some time to appear. Take a screenshot to confirm it did.
+* To open Safari, please just click on the Safari icon.
+* Using the bash tool, you can start GUI applications, but you need to set appropriate environment variables. For example: "(DISPLAY=:0 open -a 'Safari' &)". GUI apps run with the bash tool will appear within your desktop environment, but they may take some time to appear. Take a screenshot to confirm it did.
 * When using your bash tool with commands that are expected to output very large quantities of text, redirect into a tmp file and use str_replace_editor or `grep -n -B <lines before> -A <lines after> <query> <filename>` to confirm output.
 * When viewing a page, it can be helpful to zoom out so that you can see everything on the page. Either that, or make sure you scroll down to see everything before deciding something isn't available.
 * When using your computer function calls, they take a while to run and send back to you. Where possible/feasible, try to chain multiple of these calls all into one function calls request.
@@ -60,7 +60,7 @@ SYSTEM_PROMPT = f"""<SYSTEM_CAPABILITY>
 </SYSTEM_CAPABILITY>
 
 <IMPORTANT>
-* When using Chrome, if a startup wizard appears, IGNORE IT. Do not click anything. Instead, click on the address bar where it says "Search Google or type a URL", and enter the appropriate search term or URL there.
+* When using Safari, if a startup wizard appears, IGNORE IT. Do not click anything. Instead, click on the address bar where it says "Search or enter website name", and enter the appropriate search term or URL there.
 * If the item you are looking at is a pdf, if after taking a single screenshot of the pdf it seems that you want to read the entire document instead of trying to continue to read the pdf from your screenshots + navigation, determine the URL, use curl to download the pdf, install and use pdftotext to convert it to a text file, and then read that text file directly with your StrReplaceEditTool.
 * When viewing a webpage, first use your computer tool to view it and explore it. But, if there is a lot of text on that page, instead curl the html of that page to a file on disk and then use your StrReplaceEditTool to view the contents in plain text.
 </IMPORTANT>"""

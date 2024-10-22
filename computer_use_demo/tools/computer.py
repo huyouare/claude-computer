@@ -61,7 +61,7 @@ class ComputerTool(BaseAnthropicTool):
         output_dir.mkdir(parents=True, exist_ok=True)
         path = output_dir / f"screenshot_{uuid4().hex}.png"
         
-        subprocess.run(["screencapture", "-x", str(path)])
+        subprocess.run(["screencapture", "-x", "-C", str(path)])
 
         if path.exists():
             return ToolResult(base64_image=base64.b64encode(path.read_bytes()).decode())
