@@ -12,6 +12,7 @@ anthropic = {extras = ["bedrock", "vertex"], version = "^0.36.2"}
 jsonschema = "^4.22.0"
 boto3 = "^1.28.57"
 google-auth = "^2.0.0,<3"
+pyautogui = "^0.9.54"
 
 [build-system]
 requires = ["poetry-core"]
