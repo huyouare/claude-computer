@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "claude-computer"
+version = "0.1.0"
+description = "for research only"
+authors = ["Jesse Hu <huyouare@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+streamlit = "^1.38.0"
+anthropic = {extras = ["bedrock", "vertex"], version = "^0.36.2"}
+jsonschema = "^4.22.0"
+boto3 = "^1.28.57"
+google-auth = "^2.0.0,<3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

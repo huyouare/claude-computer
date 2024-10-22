@@ -1,4 +1,11 @@
-.venv
+# Python
 .ruff_cache
 __pycache__
 .pytest_cache
+
+# Poetry
+.venv
+poetry.lock
+
+# Mac
+.DS_Store

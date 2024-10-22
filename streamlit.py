@@ -28,6 +28,10 @@ from computer_use_demo.loop import (
 )
 from computer_use_demo.tools import ToolResult
 
+# Set default values for WIDTH and HEIGHT if not already set
+os.environ.setdefault('WIDTH', '1024')
+os.environ.setdefault('HEIGHT', '768')
+
 CONFIG_DIR = PosixPath("~/.anthropic").expanduser()
 API_KEY_FILE = CONFIG_DIR / "api_key"
 STREAMLIT_STYLE = """

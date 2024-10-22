@@ -3,7 +3,7 @@ from unittest import mock
 import pytest
 from streamlit.testing.v1 import AppTest
 
-from computer_use_demo.streamlit import Sender, TextBlock
+from streamlit import Sender, TextBlock
 
 
 @pytest.fixture
