@@ -21,7 +21,15 @@ This is a modified fork of https://github.com/anthropics/anthropic-quickstarts/t
 
 ## Development Setup
 
+### Pre-Installation
+
+Currently, this only works with lower screen resolution. Try something like 1280x720 for best results.
+
+You will also need to give permissions to your terminal (such as iTerm) to take screenshots and use accessibility.
+
+### Installation
+
 1. Install Poetry: https://python-poetry.org/docs/#installation
 2. Install dependencies: `poetry install --no-root`
 3. Activate the virtual environment: `poetry shell`
-4. Run the application: `streamlit run computer_use_demo/streamlit.py`
+4. Run the application: `streamlit run streamlit.py`
