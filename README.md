@@ -26,6 +26,7 @@ This is a modified fork of https://github.com/anthropics/anthropic-quickstarts/t
 Currently, this only works with lower screen resolution. Try something like 1280x720 for best results.
 
 You will also need to give permissions to your terminal (such as iTerm) to take screenshots and use accessibility.
+You will need to restart the terminal in order for changes to take effect.
 
 ### Installation
 
