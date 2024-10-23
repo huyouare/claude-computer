@@ -43,12 +43,26 @@ PROVIDER_TO_DEFAULT_MODEL_NAME: dict[APIProvider, str] = {
 }
 
 
+SYSTEM_PROMPT = f"""<SYSTEM_CAPABILITY>
+* You are utilizing a macOS environment with internet access.
+* You can install macOS applications using the bash tool. Use curl instead of wget.
+* To open Safari, please just click on the Safari icon.
+* When viewing a page, it can be helpful to zoom out so that you can see everything on the page. Either that, or make sure you scroll down to see everything before deciding something isn't available.
+* The current date is {datetime.today().strftime('%A, %B %-d, %Y')}.
+</SYSTEM_CAPABILITY>
+
+<IMPORTANT>
+* Make sure to calibrate yourself to the screen first, by using the screenshot and cursor position tools.
+* If the item you are looking at is a pdf, if after taking a single screenshot of the pdf it seems that you want to read the entire document instead of trying to continue to read the pdf from your screenshots + navigation, determine the URL, use curl to download the pdf, install and use pdftotext to convert it to a text file, and then read that text file directly with your StrReplaceEditTool.
+* When viewing a webpage, first use your computer tool to view it and explore it. But, if there is a lot of text on that page, instead curl the html of that page to a file on disk and then use your StrReplaceEditTool to view the contents in plain text.
+</IMPORTANT>"""
+
 # This system prompt is optimized for the Docker environment in this repository and
 # specific tool combinations enabled.
 # We encourage modifying this system prompt to ensure the model has context for the
 # environment it is running in, and to provide any additional information that may be
 # helpful for the task at hand.
-SYSTEM_PROMPT = f"""<SYSTEM_CAPABILITY>
+ORIGINAL_SYSTEM_PROMPT = f"""<SYSTEM_CAPABILITY>
 * You are utilizing a macOS environment with internet access.
 * You can install macOS applications using the bash tool. Use curl instead of wget.
 * To open Safari, please just click on the Safari icon.
@@ -60,6 +74,7 @@ SYSTEM_PROMPT = f"""<SYSTEM_CAPABILITY>
 </SYSTEM_CAPABILITY>
 
 <IMPORTANT>
+* Make sure to calibrate yourself to the screen first, by using the screenshot and cursor position tools.
 * When using Safari, if a startup wizard appears, IGNORE IT. Do not click anything. Instead, click on the address bar where it says "Search or enter website name", and enter the appropriate search term or URL there.
 * If the item you are looking at is a pdf, if after taking a single screenshot of the pdf it seems that you want to read the entire document instead of trying to continue to read the pdf from your screenshots + navigation, determine the URL, use curl to download the pdf, install and use pdftotext to convert it to a text file, and then read that text file directly with your StrReplaceEditTool.
 * When viewing a webpage, first use your computer tool to view it and explore it. But, if there is a lot of text on that page, instead curl the html of that page to a file on disk and then use your StrReplaceEditTool to view the contents in plain text.
